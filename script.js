@@ -9,6 +9,14 @@ function generatePassword() {
 
   console.log(length);
 
+  // What if the user places characters that are not numbers? At the moment this returns NaN, therefore an if statement is required to deal with NaN. NaN = Not A Number
+  if (isNaN(length)){
+    alert("Please only include Numbers")
+    return;
+  }
+
+
+
   //Ask if I want to include
   //UpperCase
   const includeUpperCase = confirm("Do you want to include Upper Case letters?");
@@ -18,7 +26,7 @@ function generatePassword() {
 
   //Number
   const includeNumber = confirm("Do you want to include Numbers?");
-  
+
   //Special Symbols
   const includeSymbol = confim("Do you want to include Symbols??");
 
