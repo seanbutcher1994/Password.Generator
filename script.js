@@ -43,6 +43,22 @@ function generatePassword() {
   //Generate Password based on the criterias selected and the length
 
   //1. Create the charset based on the criteria
+  let charset = "";
+
+  if(includeLowerCase){
+    charset = charset + ("abcdefghijklmnopqrstuvwxyz")
+  }
+
+  if(includeUpperCase){
+    charset = charset + ("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+  }
+
+  if(includeNumber){
+    charset = charset + ("0123456789")
+  }
+  if(includeSymbol){
+    charset = charset + ("~!@#$%^&*()_+|}{:?><`-=][';/.,")
+  }
 
   //2. Loop for the 'length' times for each iteration
   //grab a random char and append to an accumulatoer
