@@ -29,7 +29,7 @@ function generatePassword() {
   const includeNumber = confirm("Do you want to include Numbers?");
 
   //Special Symbols
-  const includeSymbol = confim("Do you want to include Symbols??");
+  const includeSymbol = confirm("Do you want to include Symbols??");
 
   //What if nothing is selected? Require an if statement which returns to the start
   // if nothing is selected.
@@ -65,7 +65,14 @@ function generatePassword() {
   }
 
   //2. Loop for the 'length' times for each iteration
-  //grab a random char and append to an accumulatoer
+  // grab a random char and append to an accumulatoer
+  // We need to create a loop which runs as many iterations as requested in the
+  // variable "length". To do this we define a variable "password" and use a for 
+  // statement to create the loop. We are declaring a new variable called "ii" and 
+  // giving it a value of 0. we're then saying that when ii is less than the variable
+  // length then the code must execute again until it is no longer less than the 
+  // variable "length". The final expression "ii++" indicagtes that we add 1 to ii each
+  // time the loop is run.
 
   let password = "";
 
@@ -74,13 +81,6 @@ function generatePassword() {
     password = password + randomChar;
   }
   return password;
-
-
-
-  //Pool of Characters
-
-  //Password is set of random characters based on the above pool
-
 
 }
 
