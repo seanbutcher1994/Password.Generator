@@ -1,4 +1,6 @@
 // Assignment Code
+generateBtn.addEventListener("click", writePassword);
+
 const generateBtn = document.querySelector("#generate");
 
 //Need to write a function called generatePassword to be able to create the randomised password with a set of criteria.
@@ -30,6 +32,14 @@ function generatePassword() {
   //Special Symbols
   const includeSymbol = confim("Do you want to include Symbols??");
 
+  //What if nothing is selected? Require an if statement which returns to the start
+  // if nothing is selected.
+
+  if(!includeLowerCase && !includeNumber && !includeSymbol && !includeUpperCase){
+    alert("Please select at least one criteria")
+    return;
+  }
+
   //Generate Password based on the criterias selected and the length
 
   //1. Create the charset based on the criteria
@@ -56,6 +66,6 @@ function writePassword() {
 
 }
 
-generateBtn.addEventListener("click", writePassword);
+
 
 
