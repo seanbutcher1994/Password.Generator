@@ -1,5 +1,4 @@
 // Assignment Code
-generateBtn.addEventListener("click", writePassword);
 
 const generateBtn = document.querySelector("#generate");
 
@@ -43,6 +42,11 @@ function generatePassword() {
   //Generate Password based on the criterias selected and the length
 
   //1. Create the charset based on the criteria
+  // We need to make sure we include everything the user has chosen in the password character
+  // set so the algorythm can then pick a random group of characters based on chosen
+  // criteria. To do this we declare a variable called charset, and we then use if
+  // statements which define what will go into charset. we say charset = charset + ""
+  // so that it includes what was previously added.
   let charset = "";
 
   if(includeLowerCase){
@@ -63,6 +67,14 @@ function generatePassword() {
   //2. Loop for the 'length' times for each iteration
   //grab a random char and append to an accumulatoer
 
+  let password = "";
+
+  for (let ii=0; ii < length; ii++){
+    const randomChar = charset[Math.floor(Math.random()*charset.length)]
+    password = password + randomChar;
+  }
+  return password;
+
 
 
   //Pool of Characters
@@ -82,6 +94,6 @@ function writePassword() {
 
 }
 
-
+generateBtn.addEventListener("click", writePassword);
 
 
