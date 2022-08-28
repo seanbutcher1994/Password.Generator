@@ -8,7 +8,6 @@ function generatePassword() {
 
   const length = Number(prompt("How many characters do you want your password to be? (8-128 characters)"));
 
-  console.log(length);
 
   // What if the user places characters that are not numbers? At the moment this returns NaN, therefore an if statement is required to deal with NaN. NaN = Not A Number
   if (isNaN(length)){
