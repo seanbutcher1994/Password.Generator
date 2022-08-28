@@ -2,16 +2,26 @@
 
 const generateBtn = document.querySelector("#generate");
 
-//Need to write a function called generatePassword to be able to create the randomised password with a set of criteria.
+// Need to write a function called generatePassword to be able to create the randomised
+// password with a set of criteria.
 function generatePassword() {
   //Ask User How Long Is the Password
 
   const length = Number(prompt("How many characters do you want your password to be? (8-128 characters)"));
 
 
-  // What if the user places characters that are not numbers? At the moment this returns NaN, therefore an if statement is required to deal with NaN. NaN = Not A Number
+  // What if the user places characters that are not numbers? At the moment this returns
+  // NaN, therefore an if statement is required to deal with NaN and force the user
+  // to put the correct type of value in . NaN = Not A Number
   if (isNaN(length)){
     alert("Please only include Numbers")
+    return;
+  }
+
+  //What if the user types in a number outside the required amounts? or doesn't type
+  // anything at all? another if statement is required to fix this.
+  if(length < 8 || length > 128){
+    alert("Please use 8-128 characters")
     return;
   }
 
