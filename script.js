@@ -74,7 +74,6 @@ function generatePassword() {
   }
 
   //2. Loop for the 'length' times for each iteration
-  // grab a random char and append to an accumulatoer
   // We need to create a loop which runs as many iterations as requested in the
   // variable "length". To do this we define a variable "password" and use a for 
   // statement to create the loop. We are declaring a new variable called "ii" and 
@@ -94,6 +93,7 @@ function generatePassword() {
 }
 
 // Write password to the #password input
+// function takes the randomised code and places it in the password ID element.
 
 function writePassword() {
   const password = generatePassword();
